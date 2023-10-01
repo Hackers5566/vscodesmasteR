@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Light Effect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+        }
+
+        #light {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: red;
+            transition: background-color 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="light"></div>
+
+    <script>
+        function changeColor() {
+            const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
+            const light = document.getElementById("light");
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            light.style.backgroundColor = randomColor;
+        }
+
+        // Change the color every 2 seconds (2000 milliseconds)
+        setInterval(changeColor, 2000);
+
+        // Initial call to change the color immediately
+        changeColor();
+    </script>
+</body>
+</html>
